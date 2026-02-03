@@ -1,0 +1,136 @@
+/* ============================================
+   N8N CHATBOT CUSTOM STYLES - Carlos Lamas
+   Multi-Theme Compatibility & Glassmorphism
+   ============================================ */
+
+:root {
+    /* N8N Base Overrides using Portfolio Tokens */
+    --chat--color--primary: var(--primary-500);
+    --chat--color--secondary: var(--primary-700);
+    --chat--color--white: #ffffff;
+    --chat--color--dark: var(--page-background);
+
+    --chat--spacing: 0.8rem;
+    --chat--border-radius: 16px;
+    --chat--font-family: 'Inter', system-ui, -apple-system, sans-serif;
+
+    /* Configuración de ventana */
+    --chat--window--width: 400px;
+    --chat--window--height: 600px;
+    --chat--window--z-index: 100000;
+}
+
+/* Base Container Positioning - LEFT SIDE */
+.n8n-chat {
+    z-index: var(--chat--window--z-index) !important;
+    left: 20px !important;
+    right: auto !important;
+    bottom: 20px !important;
+    position: fixed !important;
+}
+
+/* Window Wrapper alignment */
+.n8n-chat .chat-window-wrapper {
+    left: 20px !important;
+    right: auto !important;
+}
+
+/* Floating Toggle Button */
+.n8n-chat .chat-window-toggle {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    display: flex !important;
+    background: var(--gradient-primary) !important;
+    box-shadow: var(--shadow-glow) !important;
+    border: 2px solid var(--glass-border) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.n8n-chat .chat-window-toggle:hover {
+    transform: scale(1.1) rotate(5deg) !important;
+    box-shadow: var(--shadow-glow-strong) !important;
+}
+
+/* Chat Window Aesthetics - Responsive to Themes */
+.n8n-chat .chat-window {
+    background: var(--glass-background) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    border: 1px solid var(--glass-border) !important;
+    box-shadow: var(--glass-shadow) !important;
+    border-radius: 20px;
+    overflow: hidden;
+    color: var(--text-primary) !important;
+    transition: background 0.3s, color 0.3s, border 0.3s !important;
+}
+
+/* Header */
+.n8n-chat .chat-header {
+    background: var(--primary-500) !important;
+    color: #ffffff !important;
+    border-bottom: 1px solid var(--glass-border) !important;
+}
+
+.n8n-chat .chat-header h1 {
+    font-family: var(--font-heading) !important;
+    font-weight: 600 !important;
+}
+
+/* Messages Area */
+.n8n-chat .chat-body {
+    background: transparent !important;
+}
+
+/* Bot Messages */
+.n8n-chat .chat-message.chat-message-from-bot {
+    background-color: var(--primary-100) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: 14px 14px 14px 0 !important;
+}
+
+/* User Messages */
+.n8n-chat .chat-message.chat-message-from-user {
+    background: var(--gradient-primary) !important;
+    color: #ffffff !important;
+    border-radius: 14px 14px 0 14px !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+/* Footer / Input */
+.n8n-chat .chat-footer {
+    background: var(--surface-background) !important;
+    border-top: 1px solid var(--glass-border) !important;
+    padding: 0.8rem !important;
+}
+
+.n8n-chat .chat-inputs textarea {
+    background-color: var(--neutral-100) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--neutral-200) !important;
+    border-radius: 12px !important;
+    font-family: var(--font-body) !important;
+}
+
+/* Specific Adjustments for Dark Theme Visibility */
+[data-theme="dark"] .n8n-chat .chat-message.chat-message-from-bot {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .n8n-chat .chat-inputs textarea {
+    background-color: rgba(15, 23, 42, 0.5) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+    .n8n-chat {
+        left: 10px !important;
+        bottom: 10px !important;
+    }
+
+    .n8n-chat .chat-window {
+        width: calc(100vw - 20px) !important;
+        height: 70vh !important;
+    }
+}
