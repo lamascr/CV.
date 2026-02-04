@@ -27,7 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         createChat({
-            webhookUrl: 'https://production-n8n.fly.dev/webhook/18da2a38-8add-4d1e-99b8-6bd2c6f31d6c/chat',
+            webhookUrl: 'https://carlos12398.app.n8n.cloud/webhook/37e7435d-8ddf-44b2-aa80-9a4934e0eb9b/chat',
+
             webhookConfig: {
                 method: 'POST',
                 headers: {}
